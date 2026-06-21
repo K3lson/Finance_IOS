@@ -16,6 +16,8 @@ interface BudgetPageClientProps {
   initialExpenses: Expense[]
   currentMonth: number
   currentYear: number
+  initialExpenseModalOpen?: boolean
+  initialIncomeFormOpen?: boolean
 }
 
 function mapExpense(row: Record<string, unknown>): Expense {
@@ -39,6 +41,8 @@ export function BudgetPageClient({
   initialExpenses,
   currentMonth,
   currentYear,
+  initialExpenseModalOpen = false,
+  initialIncomeFormOpen = false,
 }: BudgetPageClientProps) {
   const [selectedMonth, setSelectedMonth] = useState(currentMonth)
   const [selectedYear, setSelectedYear] = useState(currentYear)
@@ -111,6 +115,7 @@ export function BudgetPageClient({
           onSourcesChange={setIncomeSources}
           onError={toast.error}
           onSuccess={toast.success}
+          defaultOpen={initialIncomeFormOpen}
         />
         <div className={loadingExpenses ? 'opacity-60 pointer-events-none' : ''}>
           <ExpenseList
@@ -118,6 +123,7 @@ export function BudgetPageClient({
             onExpensesChange={setExpenses}
             onError={toast.error}
             onSuccess={toast.success}
+            defaultOpen={initialExpenseModalOpen}
           />
         </div>
       </div>

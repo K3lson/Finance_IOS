@@ -14,6 +14,7 @@ interface ExpenseListProps {
   onExpensesChange: (expenses: Expense[]) => void
   onError: (msg: string) => void
   onSuccess: (msg: string) => void
+  defaultOpen?: boolean
 }
 
 function formatDate(dateStr: string): string {
@@ -21,8 +22,8 @@ function formatDate(dateStr: string): string {
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 }
 
-export function ExpenseList({ expenses, onExpensesChange, onError, onSuccess }: ExpenseListProps) {
-  const [modalOpen, setModalOpen] = useState(false)
+export function ExpenseList({ expenses, onExpensesChange, onError, onSuccess, defaultOpen = false }: ExpenseListProps) {
+  const [modalOpen, setModalOpen] = useState(defaultOpen)
   const [name, setName] = useState('')
   const [amount, setAmount] = useState('')
   const [category, setCategory] = useState<Expense['category']>('food')

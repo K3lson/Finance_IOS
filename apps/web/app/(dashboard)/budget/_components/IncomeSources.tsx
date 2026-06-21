@@ -14,10 +14,11 @@ interface IncomeSourcesProps {
   onSourcesChange: (sources: IncomeSource[]) => void
   onError: (msg: string) => void
   onSuccess: (msg: string) => void
+  defaultOpen?: boolean
 }
 
-export function IncomeSources({ sources, onSourcesChange, onError, onSuccess }: IncomeSourcesProps) {
-  const [showForm, setShowForm] = useState(false)
+export function IncomeSources({ sources, onSourcesChange, onError, onSuccess, defaultOpen = false }: IncomeSourcesProps) {
+  const [showForm, setShowForm] = useState(defaultOpen)
   const [name, setName] = useState('')
   const [amount, setAmount] = useState('')
   const [frequency, setFrequency] = useState<IncomeSource['frequency']>('monthly')
