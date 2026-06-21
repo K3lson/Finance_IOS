@@ -12,18 +12,24 @@
     "@finance-app/core": "workspace:*",
     "@finance-app/types": "workspace:*",
     "@finance-app/ui": "workspace:*",
+    "@gsap/react": "^2.1.2",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
     "@supabase/ssr": "^0.5.0",
     "@supabase/supabase-js": "^2.45.0",
     "framer-motion": "^12.40.0",
+    "gsap": "^3.15.0",
     "next": "14.2.35",
     "react": "^18",
     "react-dom": "^18",
-    "recharts": "^3.8.1"
+    "recharts": "^3.8.1",
+    "three": "^0.184.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/three": "^0.184.1",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
